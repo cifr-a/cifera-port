@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio pribadi, gaming, dan proyek kreatif.">
+  <title>cifra | Personal Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0b0f0d;
+      --panel: #14251c;
+      --green: #166534;
+      --text: #f0fdf4;
+      --muted: #a7b5ac;
+      --green-glow: #4ade80;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 8%;
+      border-bottom: 1px solid #292638;
+      position: sticky;
+      top: 0;
+      background: #0b0b12ee;
+      backdrop-filter: blur(12px);
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    section {
+      padding: 80px 8%;
+      scroll-margin-top: 75px;
+    }
+
+    .hero {
+      min-height: 76vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      background:
+        radial-gradient(ellipse at 85% 25%,
+        #16653440, transparent 45%);
+    }
+
+    .tag {
+      color: var(--green);
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 8vw, 5.5rem);
+      line-height: 1.1;
+      margin: 18px 0;
+    }
+
+    h1 span {
+      color: var(--green-glow);
+    }
+
+    .intro {
+      max-width: 580px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: #f0fdf4;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid #302a42;
+      background: var(--panel);
+      border-radius: 14px;
+      transition: border-color 0.2s,
+                  transform 0.2s;
+    }
+
+    .card:hover {
+      border-color: var(--green-glow);
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .contact {
+      text-align: center;
+      background: #12101d;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin: 12px 0 24px;
+    }
+
+    footer {
+      padding: 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid #292638;
+    }
+
+    @media (max-width: 520px) {
+      nav {
+        padding: 16px 5%;
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 0.8rem;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a class="logo" href="#home">cifra</a>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#games">Games</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <p class="tag">Welcome to my digital world</p>
+
+      <h1>Hi, I'm <span>cifra</span></h1>
+
+      <p class="intro">
+        Gamer, anime enthusiast, and beginner developer.
+        This is my little corner on the internet where
+        I share my interests, projects, and creativity.
+      </p>
+
+      <a class="button" href="#about">Explore My World ↘</a>
+    </section>
+
+    <section id="about">
+      <p class="tag">01 / About</p>
+      <h2 class="section-title">Who Am I?</h2>
+
+      <p class="section-desc">
+        I'm someone who enjoys anime, gaming, technology,
+        and learning new things. I'm currently exploring
+        web development and building my first website.
+      </p>
+    </section>
+
+    <section id="games">
+      <p class="tag">02 / My Interests</p>
+      <h2 class="section-title">Games I Play</h2>
+
+      <p class="section-desc">
+        Some games that are part of my digital world.
+      </p>
+
+      <div class="cards">
+        <article class="card">
+          <h3>⚔️ Honkai: Star Rail</h3>
+          <p>Character builds, team compositions,
+             lore, and turn-based combat.</p>
+        </article>
+
+        <article class="card">
+          <h3>🌌 Genshin Impact</h3>
+          <p>Exploration, character stories,
+             and discovering Teyvat.</p>
+        </article>
+
+        <article class="card">
+          <h3>🎮 Roblox</h3>
+          <p>Exploring different experiences,
+             grinding, and having fun.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <p class="tag">03 / My Work</p>
+      <h2 class="section-title">My Projects</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Personal Portfolio</h3>
+          <p>My first website, built with
+             HTML, CSS, and JavaScript.</p>
+        </article>
+
+        <article class="card">
+          <h3>Coming Soon</h3>
+          <p>More creative and coding projects
+             will be added here.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="tag">04 / Contact</p>
+      <h2 class="section-title">Let's Connect</h2>
+
+      <p>Thanks for visiting my little corner
+         of the internet.</p>
+
+      <button class="button" id="helloButton">
+        Say Hello ✦
+      </button>
+
+      <p id="message" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> cifra · Made with curiosity.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    document.getElementById("helloButton")
+      .addEventListener("click", function () {
+        document.getElementById("message").textContent =
+          "Thanks for stopping by! Have a great day ✨";
+      });
+  </script>
+</body>
+</html>

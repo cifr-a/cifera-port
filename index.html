@@ -324,6 +324,56 @@
   }
 }
 
+
+/* ===== ULQUIORRA LIGHTBOX ===== */
+
+.ulqui-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.ulqui-lightbox.active {
+  display: flex;
+}
+
+.ulqui-lightbox img {
+  display: block;
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  filter:
+    drop-shadow(0 0 12px rgba(0, 255, 100, 0.45))
+    drop-shadow(0 0 30px rgba(0, 255, 100, 0.2));
+}
+
+.ulqui-lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  border: 1px solid rgba(0, 255, 100, 0.4);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  color: #fff;
+  background: #102019;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.ulqui-card img {
+  cursor: zoom-in;
+}
+
   </style>
 </head>
 
@@ -495,5 +545,50 @@
           "Thanks for stopping by! Have a great day ✨";
       });
   </script>
+  
+<div class="ulqui-lightbox" id="ulquiLightbox">
+  <button
+    class="ulqui-lightbox-close"
+    id="ulquiLightboxClose"
+    aria-label="Close image"
+    type="button"
+  >×</button>
+
+  <img id="ulquiLightboxImage" src="" alt="">
+</div>
+
+<script>
+  const lightbox = document.getElementById("ulquiLightbox");
+  const lightboxImage = document.getElementById("ulquiLightboxImage");
+  const closeButton = document.getElementById("ulquiLightboxClose");
+
+  document.querySelectorAll(".ulqui-card img").forEach((img) => {
+    img.addEventListener("click", () => {
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt;
+      lightbox.classList.add("active");
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    lightboxImage.src = "";
+  }
+
+  closeButton.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
+  });
+</script>
+
 </body>
 </html>
